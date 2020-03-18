@@ -12,15 +12,15 @@
 <ul class='list'>
 </ul>
 <form>
-  <input type='text' id='todo-item' name='todo-item' placeholder='Write a todo here'>
-  <button class='add'>+</button>
+  <input type='text' id='todo-item' name='todo-item' placeholder='Write a todo here' required>
+  <button type='submit' class='add'>+</button>
 </form>
 
     <template id="todoTemplate">
         <div class="todo">
           <input class="todo__checkbox" type="checkbox" name="" id="">
           <label class="todo__text" for=""></label>
-          <button class="todo__delete"></button>
+          <button class="todo__delete">X</button>
         </div>
       </template>
 
