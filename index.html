@@ -11,21 +11,23 @@
 
 <ul class='list'>
 </ul>
+
 <form>
-  <input type='text' id='todo-item' name='todo-item' placeholder='Write a todo here' required>
+  <input type='text' id='todo-item' name='todo-item' placeholder='Write a todo here'>
   <button type='submit' class='add'>+</button>
 </form>
 
     <template id="todoTemplate">
-        <div class="todo">
+        <li class="todo">
           <input class="todo__checkbox" type="checkbox" name="" id="">
           <label class="todo__text" for=""></label>
           <button class="todo__delete">X</button>
-        </div>
+        </li>
       </template>
 
    
     <script src='test-helpers.js'></script>
+    <script src='script-test.js'></script>
     <script src='script.js'></script>
 </body>
 </html>
