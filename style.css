@@ -1,1 +1,3 @@
-j
+.todo__text--done {
+    text-decoration: line-through;
+}
