@@ -43,8 +43,10 @@ test('clicking a label ticks the corresponding checkbox', assert => {
     }
   })
 
-
-  assert.equal(assertion, true)
+  assert.equal(assertion, true);
+  checkboxes.forEach(box => {
+     if (box.checked) {box.click()}
+  });
 })
 
 
