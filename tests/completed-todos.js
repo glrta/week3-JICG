@@ -28,8 +28,10 @@ test("BEM styling is reapplied to todo item text when checkbox is clicked", asse
 });
 
 test('clicking a label ticks the corresponding checkbox', assert => {
-  let labels = document.querySelectorAll('div.todo > label');
-  let checkboxes = document.querySelectorAll('div.todo > input');
+  let labels = document.querySelectorAll('.todo > label');
+  console.log("labels", labels)
+  let checkboxes = document.querySelectorAll('.todo > input');
+  console.log("checkboxes", checkboxes)
   let assertion = true;
 
   labels.forEach((e, i) => {
@@ -45,6 +47,7 @@ test('clicking a label ticks the corresponding checkbox', assert => {
   })
 
   assert.equal(assertion, true);
+
   checkboxes.forEach(box => {
      if (box.checked) {box.click()}
   });
