@@ -1,9 +1,12 @@
 const formList = document.querySelector(".form-list");
 const list = document.querySelector(".list");
-const listItems = document.getElementsByTagName("label");
+const listItems = list.getElementsByTagName("label");
 const addButton = document.querySelector(".add");
 const inputBox = document.querySelector("#todo-item");
+const filterButton = document.querySelector('.filter')
 let addedTodos = 0;
+
+// console.log(filterButton.checked)
 
 addButton.addEventListener("click", submitHandler);
 
@@ -48,3 +51,5 @@ function submitHandler(event) {
     formList.appendChild(err);
   }
 }
+
+
