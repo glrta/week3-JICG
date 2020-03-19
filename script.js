@@ -3,20 +3,27 @@ const listItems = document.getElementsByTagName('label')
 const addButton = document.querySelector('.add')
 let inputBox = document.querySelector('#todo-item')
 
-console.log(list)
-console.log(listItems)
+addButton.addEventListener('click', submitHandler); 
+
+// Trying to fic console problem
+// addButton.addEventListener('keydown', function (e) {
+//     if (e.keyCode === 13) {        
+//         submitHandler;           
+//     }
+// })
 
 
-addButton.addEventListener('click', (event) => {
+function submitHandler(event) {
     event.preventDefault()
 
     let userInput = inputBox.value
-    if(userInput === '' || null){
-        alert('write something!')
-    } else {
-        const template = document.querySelector("#todoTemplate");
-        const domFrag = template.content.cloneNode(true);
-        domFrag.querySelector('.todo__text').textContent = userInput
-        list.appendChild(domFrag)
+    if(!userInput){
+        alert('write something!');
+        return;
     }
-})
+    const template = document.querySelector("#todoTemplate");
+    const domFrag = template.content.cloneNode(true);
+    domFrag.querySelector('.todo__text').textContent = userInput
+    list.appendChild(domFrag)
+    inputBox.value = ""; 
+} 
