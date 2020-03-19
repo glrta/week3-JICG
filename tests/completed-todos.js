@@ -1,3 +1,9 @@
+function uncheckChecked(boxes) {
+  boxes.forEach(box => {
+    if (box.checked) {box.click()}
+ });
+}
+
 test('Can check every checkbox', assert => {
   let checkboxes = Array.from(document.querySelectorAll('li input')) 
   let passing;
@@ -22,16 +28,12 @@ test("BEM styling is reapplied to todo item text when checkbox is clicked", asse
         }
     }
 
-    boxes.forEach(box => {
-       if (box.checked) {box.click()}
-    });
+    uncheckChecked(boxes)
 });
 
 test('clicking a label ticks the corresponding checkbox', assert => {
   let labels = document.querySelectorAll('.todo > label');
-  console.log("labels", labels)
   let checkboxes = document.querySelectorAll('.todo > input');
-  console.log("checkboxes", checkboxes)
   let assertion = true;
 
   labels.forEach((e, i) => {
@@ -48,11 +50,8 @@ test('clicking a label ticks the corresponding checkbox', assert => {
 
   assert.equal(assertion, true);
 
-  checkboxes.forEach(box => {
-     if (box.checked) {box.click()}
-  });
+  uncheckChecked(checkboxes)
 })
-
 
 /*
 test ideas
