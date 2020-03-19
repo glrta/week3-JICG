@@ -1,18 +1,28 @@
 :root{
     --primaryColor: #61c0bf;
     --secondaryColor: #ffb6b9;
+    background: url(https://images.unsplash.com/photo-1546965860-f981527a0422?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2002&q=80) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 
 body {
-    max-width: 20rem;
-    min-height: 100vh;
+    max-width: 30rem;
+    /* min-height: 100vh; */
     font-family: 'Sen', sans-serif;
     margin: 0 auto;
-    text-align: center;
     background-color: var(--primaryColor);
+    border-radius: 2%; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
    
 }
+
 
 ul {
     text-align: left;
@@ -22,6 +32,7 @@ ul {
 h1 {
     margin-top: 1rem;
     font-size:3.5rem;
+    text-align: center;
 }
 
 .todo__text--done {
@@ -60,10 +71,19 @@ form {
 form > input {
     grid-column: 1 / 5;
     padding: 0 1rem;
+    border: none;
+    background-color: aliceblue;
+    font-size: 1.75em;
 }
+
+/* form > input::placeholder {
+    font-size: 200%;
+} */
 
 form > button {
     grid-column: 5 / 6;
+    border: none;
+    background-color: aliceblue;
 } 
 
 .form-list > p {
