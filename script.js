@@ -20,16 +20,19 @@ todos.forEach(todo => {
   })
 })
   
-addButton.addEventListener('click', (event) => {
+addButton.addEventListener('click', submitHandler); 
+
+function submitHandler(event) {
     event.preventDefault()
 
     let userInput = inputBox.value
-    if(userInput === '' || null){
-        alert('write something!')
-    } else {
-        const template = document.querySelector("#todoTemplate");
-        const domFrag = template.content.cloneNode(true);
-        domFrag.querySelector('.todo__text').textContent = userInput
-        list.appendChild(domFrag)
+    if(!userInput){
+        alert('write something!');
+        return;
     }
-})
+    const template = document.querySelector("#todoTemplate");
+    const domFrag = template.content.cloneNode(true);
+    domFrag.querySelector('.todo__text').textContent = userInput
+    list.appendChild(domFrag)
+    inputBox.value = ""; 
+} 
