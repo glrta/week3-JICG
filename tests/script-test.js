@@ -36,6 +36,67 @@ console.groupCollapsed("TEST: Can add items")
         
 console.groupEnd("TEST: Can add items")
 
+
+console.groupCollapsed("TEST: Can mark items done")
+
+function uncheckChecked(boxes) {
+  boxes.forEach(box => {
+    if (box.checked) {box.click()}
+ });
+}
+test('Can check every checkbox', assert => {
+  let checkboxes = Array.from(document.querySelectorAll('li input')) 
+  let passing;
+  checkboxes.forEach(checkbox => checkbox.click());
+  if (checkboxes.length > 0) {passing = checkboxes.every(checkbox => checkbox.checked);}
+  assert.equal(passing, true);
+  checkboxes.forEach(checkbox => checkbox.click());
+});
+
+test("BEM styling is reapplied to todo item text when checkbox is clicked", assert => {
+    let boxes = document.querySelectorAll('input[type=checkbox]');
+    let textItems = document.querySelectorAll('li label');
+    for (let i=0; i< boxes.length; i++){
+        if (i%2==0){
+            boxes[i].click();
+            assert.equal(textItems[i].classList.contains('todo__text--done'), true);
+        }
+        else {
+            boxes[i].click();
+            boxes[i].click();
+            assert.equal(textItems[i].classList.contains('todo__text--done'), false);
+        }
+    }
+
+    uncheckChecked(boxes)
+});
+
+test('clicking a label ticks the corresponding checkbox', assert => {
+  let labels = document.querySelectorAll('.todo > label');
+  let checkboxes = document.querySelectorAll('.todo > input');
+  let assertion = true;
+
+  labels.forEach((e, i) => {
+    if (i % 2 === 0) {e.click()}
+  })
+
+  checkboxes.forEach((e, i) => {
+    if (i % 2 === 0 && !e.checked) {
+      assertion = false;
+    } else if (i % 2 !== 0 && e.checked) {
+      assertion = false;
+    }
+  })
+
+  assert.equal(assertion, true);
+
+  uncheckChecked(checkboxes)
+})
+
+
+console.groupEnd("TEST: Can mark items done")
+
+
 console.groupCollapsed("TEST: Can delete items")
 
 test('every todo has a delete button', assert => {
@@ -53,6 +114,7 @@ test('clicking the delete button deletes a todo item', t => {
 })
 
 test('pressing the delete button deletes the correct todo', t => {
+    // nb this test is dependent on others which insert todos
     let todos = document.querySelectorAll('.todo')
     const startingLength = todos.length
     const randomIndex = Math.floor(Math.random() * todos.length)
@@ -64,4 +126,5 @@ test('pressing the delete button deletes the correct todo', t => {
 })
 
 console.groupEnd("TEST: Can delete items")
-    
+
+document.querySelectorAll('.todo').forEach(todo => todo.remove())

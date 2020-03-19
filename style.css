@@ -3,21 +3,69 @@
     --secondaryColor: #ffb6b9;
 }
 
+
 body {
-    width: 90%;
+    max-width: 20rem;
+    min-height: 100vh;
     font-family: 'Sen', sans-serif;
-    margin: 10% auto;
+    margin: 0 auto;
     text-align: center;
+    background-color: var(--primaryColor);
+   
 }
 
 ul {
     text-align: left;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 1rem;
+    font-size:3.5rem;
 }
 
 .todo__text--done {
     text-decoration: line-through;
 }
 
+li + li {
+    margin: 2rem 0;
+    list-style-type: none;
+}
+
 li {
     list-style-type: none;
+}
+
+li > label {
+    font-size: 2rem;
+    word-wrap: break-word;
+}
+
+li > button {
+    float: right;
+    position: relative;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1;
+    height: 3rem;
+}
+
+form > input {
+    grid-column: 1 / 5;
+    padding: 0 1rem;
+}
+
+form > button {
+    grid-column: 5 / 6;
+} 
+
+.form-list > p {
+    color:hsl(0,80%,40%);
 }
