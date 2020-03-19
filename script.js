@@ -20,12 +20,16 @@ function submitHandler(event) {
 
     let userInput = inputBox.value;
     if(!userInput){
-        console.log('write something!');
+        console.warn('write something!');
         return;
     }
     
     domFrag.querySelector('.todo__text').textContent = userInput
-
+    todo.addEventListener('click', (event) => {
+        if (event.target.tagName === "BUTTON") {
+            event.currentTarget.remove()
+        }
+    })
     todo.addEventListener('click', (event) => {
       if (event.target.tagName === "INPUT") { 
           todoLabel.classList.toggle('todo__text--done')
@@ -36,3 +40,4 @@ function submitHandler(event) {
 
     inputBox.value = ""; 
 }
+
