@@ -140,7 +140,7 @@ function countChecked(listItems){
     }
 }
 
-countChecked(listItems)
+// countChecked(listItems)
 
 // test('Counts how many checked items are in the list', t => {
 
