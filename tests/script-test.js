@@ -38,18 +38,31 @@ console.groupEnd("TEST: Can add items")
 
 console.groupCollapsed("TEST: Can delete items")
 
-    // test("Can we delete a list item by clicking its delete button", t => {
-        
-    //     t.equal(,);
-    // })
+test('every todo has a delete button', assert => {
+    // will be false positive if there are no todos
+    const todos = Array.from(document.querySelectorAll('.todo'));
+    let assertion = todos.every(todo => todo.querySelector('.todo__delete'))
+    assert.equal(assertion, true)
+})
 
-    // test("Can we select an item's node by clicking its delete button", t => {
-    //     let deleteButtons = list.getElementsByTagName('button');
-    //     deleteButtons.forEach(deleteButton => {
-    //         deleteButton.click();
-    //     })
-    //     t.equal(focusElement,1);
-    // })
+test('clicking the delete button deletes a todo item', t => {
+    const startingLength = list.children.length;
+    document.querySelector('.todo__delete').click();
+    const endLength = list.children.length;
+    t.equal(startingLength - 1, endLength);
+})
+
+test('pressing the delete button only deletes the correct todo', t => {
+    const todos = Array.from(document.querySelectorAll('.todo'))
+    const randomIndex = Math.floor(Math.rand() * todos.length)
+    console.log(randomIndex);
+})
+/*
+test ideas
+- every todo has a delete button
+- pressing the delete button deletes a todo
+- pressing the delete button deletes only the todo of the button that was pressed
+*/
 
 console.groupEnd("TEST: Can delete items")
     
