@@ -3,10 +3,10 @@ const list = document.querySelector(".list");
 const listItems = list.getElementsByTagName("label");
 const addButton = document.querySelector(".add");
 const inputBox = document.querySelector("#todo-item");
-const filterButton = document.querySelector('.filter')
-let addedTodos = 0;
+const filterButton = document.querySelector('#filter')
+const checkedItems = document.getElementsByClassName('todo__text--done')
 
-// console.log(filterButton.checked)
+let addedTodos = 0;
 
 addButton.addEventListener("click", submitHandler);
 
@@ -50,6 +50,15 @@ function submitHandler(event) {
     err.appendChild(message);
     formList.appendChild(err);
   }
+}
+
+//we tried to add a filter but our brains stopped working
+
+if (filterButton.checked === true){
+  console.log(checkedItems)
+  for (let i=0; i < checkedItems.length; i++){
+    checkedItems[i].classList.add('hide')
+  }  
 }
 
 
