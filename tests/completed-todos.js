@@ -1,5 +1,5 @@
 test('Can check every checkbox', assert => {
-  let checkboxes = Array.from(document.querySelectorAll('form input')) 
+  let checkboxes = Array.from(document.querySelectorAll('li input')) 
   let passing;
   checkboxes.forEach(checkbox => checkbox.click());
   if (checkboxes.length > 0) {passing = checkboxes.every(checkbox => checkbox.checked);}
