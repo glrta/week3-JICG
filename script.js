@@ -8,16 +8,16 @@ addButton.addEventListener('click', submitHandler);
 
 function submitHandler(event) {
     event.preventDefault()
+    const template = document.querySelector("#todoTemplate");
+    const domFrag = template.content.cloneNode(true);
+    const todo = domFrag.querySelector('.todo')
 
     let userInput = inputBox.value
     if(!userInput){
         alert('write something!');
         return;
     }
-    const template = document.querySelector("#todoTemplate");
-    const domFrag = template.content.cloneNode(true);
     domFrag.querySelector('.todo__text').textContent = userInput
-    const todo = domFrag.querySelector('.todo')
 
     todo.addEventListener('click', (event) => {
       let text = todo.querySelector('label')
