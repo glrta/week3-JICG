@@ -6,7 +6,6 @@ let addedTodos = 0
   
 addButton.addEventListener('click', submitHandler); 
 
-
 function submitHandler(event) {
     event.preventDefault()
     addedTodos++;
@@ -18,12 +17,11 @@ function submitHandler(event) {
     todoLabel.htmlFor = `todo-number-${addedTodos}`
     todoInput.id = `todo-number-${addedTodos}`
 
-    let userInput = inputBox.value;
+    let userInput = inputBox.value
     if(!userInput){
-        console.log('write something!');
+        alert('write something!');
         return;
     }
-    
     domFrag.querySelector('.todo__text').textContent = userInput
 
     todo.addEventListener('click', (event) => {

@@ -1,10 +1,9 @@
-console.groupCollapsed("TEST: Can mark items done")
-
 function uncheckChecked(boxes) {
   boxes.forEach(box => {
     if (box.checked) {box.click()}
  });
 }
+
 test('Can check every checkbox', assert => {
   let checkboxes = Array.from(document.querySelectorAll('li input')) 
   let passing;
@@ -53,9 +52,6 @@ test('clicking a label ticks the corresponding checkbox', assert => {
 
   uncheckChecked(checkboxes)
 })
-
-
-console.groupEnd("TEST: Can mark items done")
 
 /*
 test ideas
