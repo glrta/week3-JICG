@@ -32,11 +32,17 @@ function submitHandler(event) {
         todoLabel.classList.toggle("todo__text--done");
       }
     });
-
+    domFrag.querySelector('.todo__text').textContent = userInput;
+    todo.addEventListener('click', (event) => {
+        if (event.target.tagName === "BUTTON") {
+            event.currentTarget.remove()
+        }
+      })
     list.appendChild(domFrag);
 
     inputBox.value = "";
   } 
+  
   else if(formList.childElementCount == 2) {
     err.appendChild(message);
     formList.appendChild(err);
