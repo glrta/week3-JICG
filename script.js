@@ -20,7 +20,7 @@ function submitHandler(event) {
 
     let userInput = inputBox.value;
     if(!userInput){
-        console.log('write something!');
+        console.warn('write something!');
         return;
     }
     

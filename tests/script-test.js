@@ -52,17 +52,16 @@ test('clicking the delete button deletes a todo item', t => {
     t.equal(startingLength - 1, endLength);
 })
 
-test('pressing the delete button only deletes the correct todo', t => {
-    const todos = Array.from(document.querySelectorAll('.todo'))
-    const randomIndex = Math.floor(Math.rand() * todos.length)
-    console.log(randomIndex);
+test('pressing the delete button deletes the correct todo', t => {
+    let todos = document.querySelectorAll('.todo')
+    const startingLength = todos.length
+    const randomIndex = Math.floor(Math.random() * todos.length)
+    const removableElement = todos[randomIndex]
+    removableElement.remove();
+    todos = Array.from(document.querySelectorAll('.todo'))
+    const assertion = !todos.includes(removableElement) && todos.length === startingLength - 1;
+    t.equal(assertion, true);
 })
-/*
-test ideas
-- every todo has a delete button
-- pressing the delete button deletes a todo
-- pressing the delete button deletes only the todo of the button that was pressed
-*/
 
 console.groupEnd("TEST: Can delete items")
     
