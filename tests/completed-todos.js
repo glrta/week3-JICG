@@ -21,6 +21,7 @@ test("BEM styling is reapplied to todo item text when checkbox is clicked", asse
             assert.equal(textItems[i].classList.contains('todo__text--done'), false);
         }
     }
+
     boxes.forEach(box => {
        if (box.checked) {box.click()}
     });

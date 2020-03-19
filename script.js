@@ -1,4 +1,4 @@
-const todos = document.querySelectorAll('ul.list > li')
+const todos = document.querySelectorAll('.todo') // these are not rendered until a function makes them
 const list = document.querySelector('.list')
 const listItems = document.getElementsByTagName('label')
 const addButton = document.querySelector('.add')
