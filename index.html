@@ -9,14 +9,17 @@
 <body>
 <h1>To-do list</h1>
 
+
 <ul class='list'>
 </ul>
+
 
 <form>
   
   <input type='text' id='todo-item' name='todo-item' aria-label='todo input' placeholder='Write a todo here'>
   <button type='submit' class='add'>+</button>
 </form>
+
 
     <template id="todoTemplate">
         <li class="todo">
@@ -26,10 +29,11 @@
         </li>
     </template>
 
-      <script src='tests/test-helpers.js'></script>
-      <script src='script.js'></script>
+    <script src='script.js'></script>  
+    <script src='tests/test-helpers.js'></script>
       <script src='tests/script-test.js'></script>
       <script src="tests/completed-todos.js"></script>
+      
 
 </body>
 </html>

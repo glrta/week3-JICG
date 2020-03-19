@@ -40,7 +40,6 @@ console.groupCollapsed("TEST: Can delete items")
 
     // test("Can we delete a list item by clicking its delete button", t => {
         
-    //     t.equal(,);
     // })
 
     // test("Can we select an item's node by clicking its delete button", t => {
