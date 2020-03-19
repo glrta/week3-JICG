@@ -9,7 +9,7 @@ test('Can check every checkbox', assert => {
 
 test("BEM styling is reapplied to todo item text when checkbox is clicked", assert => {
     let boxes = document.querySelectorAll('input[type=checkbox]');
-    let textItems = document.querySelectorAll('form label');
+    let textItems = document.querySelectorAll('li label');
     for (let i=0; i< boxes.length; i++){
         if (i%2==0){
             boxes[i].click();
