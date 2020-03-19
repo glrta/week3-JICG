@@ -125,6 +125,35 @@ test('pressing the delete button deletes the correct todo', t => {
     t.equal(assertion, true);
 })
 
+
 console.groupEnd("TEST: Can delete items")
+    
+console.groupCollapsed("TEST: Can filter items")
+function countChecked(listItems){
+    let checkedItems = 0
+
+    for(let i=0; listItems.length; i++){
+        if (listItems[i].checked === true){
+            checkedItems++
+        }
+        console.log(checkedItems)
+    }
+}
+
+countChecked(listItems)
+
+// test('Counts how many checked items are in the list', t => {
+
+//     t.equal()
+//     }
+
+// })
+
+
+console.groupEnd("TEST: Can filter items")
+
+
+
+
 
 document.querySelectorAll('.todo').forEach(todo => todo.remove())

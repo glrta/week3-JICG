@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='style.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sen&display=swap"
+      rel="stylesheet"
+    />
     <title>To do list</title>
-</head>
-<body>
-<h1>To-do list</h1>
+  </head>
+  <body>
+    <h1>To-do list</h1>
+    <div class="form-list">
+      <ul class="list">
 
-<div class='form-list'>
-<ul class='list'>
-</ul>
+      </ul>
+      <form>
+        <input
+          type="text"
+          id="todo-item"
+          name="todo-item"
+          placeholder="Write a to do here"
+          autocomplete="off"
+        />
+        <button type="submit" class="add" aria-label="add to do item">Add</button>
+      </form>
+      <input type='radio' class='all' name='all' id='all'>
+      <label for='all'>Show all</label>
+      <input type='radio' class='all' name='filter' id='filter'>
+      <label for='filter'>Show to-dos</label>
+  </div>
 
-
-<form>
-  <input type='text' id='todo-item' name='todo-item' placeholder="Write a to do here" autocomplete="off">
-  <button type='submit' class='add' aria-label="add to do item">Add</button>
-</form>
-
-</div>
     <template id="todoTemplate">
         <li class="todo">
           <input class="todo__checkbox" type="checkbox" name="" id="">
@@ -31,7 +42,7 @@
 
     <script src='script.js'></script>  
     <script src='tests/test-helpers.js'></script>
-      <script src='tests/script-test.js'></script>
+    <script src='tests/script-test.js'></script>
 
 </body>
 </html>
