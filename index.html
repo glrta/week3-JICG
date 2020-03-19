@@ -9,13 +9,16 @@
 <body>
 <h1>To-do list</h1>
 
-<form>
-  <input type='text' id='todo-item' name='todo-item' placeholder='Write a todo here'>
-  <button type='submit' class='add'>+</button>
-</form>
 
 <ul class='list'>
 </ul>
+
+
+<form>
+  
+  <input type='text' id='todo-item' name='todo-item' aria-label='todo input' placeholder='Write a todo here'>
+  <button type='submit' class='add'>+</button>
+</form>
 
 
     <template id="todoTemplate">
@@ -24,11 +27,13 @@
           <label class="todo__text" for=""></label>
           <button class="todo__delete">X</button>
         </li>
-      </template>
+    </template>
 
-    <script src='test-helpers.js'></script>
-    <script src='script.js'></script>
-    <script src='script-test.js'></script>
-    
+    <script src='script.js'></script>  
+    <script src='tests/test-helpers.js'></script>
+      <script src='tests/script-test.js'></script>
+      <script src="tests/completed-todos.js"></script>
+      
+
 </body>
 </html>

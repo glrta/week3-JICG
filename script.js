@@ -1,29 +1,38 @@
 const list = document.querySelector('.list')
 const listItems = document.getElementsByTagName('label')
 const addButton = document.querySelector('.add')
-let inputBox = document.querySelector('#todo-item')
-
+const inputBox = document.querySelector('#todo-item');
+let addedTodos = 0
+  
 addButton.addEventListener('click', submitHandler); 
-
-// Trying to fix console problem
-// addButton.addEventListener('keydown', function (e) {
-//     if (e.keyCode === 13) {        
-//         submitHandler;           
-//     }
-// })
 
 
 function submitHandler(event) {
     event.preventDefault()
-
-    let userInput = inputBox.value
-    // if(!userInput){
-    //     alert('write something!');
-    //     return;
-    // }
+    addedTodos++;
     const template = document.querySelector("#todoTemplate");
     const domFrag = template.content.cloneNode(true);
+    const todo = domFrag.querySelector('.todo')
+    const todoLabel = domFrag.querySelector('label')
+    const todoInput = domFrag.querySelector('.todo__checkbox')
+    todoLabel.htmlFor = `todo-number-${addedTodos}`
+    todoInput.id = `todo-number-${addedTodos}`
+
+    let userInput = inputBox.value;
+    if(!userInput){
+        console.log('write something!');
+        return;
+    }
+    
     domFrag.querySelector('.todo__text').textContent = userInput
+
+    todo.addEventListener('click', (event) => {
+      if (event.target.tagName === "INPUT") { 
+          todoLabel.classList.toggle('todo__text--done')
+      }
+    })
+
     list.appendChild(domFrag)
+
     inputBox.value = ""; 
-} 
+}
