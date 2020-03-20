@@ -56,22 +56,23 @@ test("Can check every checkbox", assert => {
   checkboxes.forEach(checkbox => checkbox.click());
 });
 
-test("BEM styling is reapplied to todo item text when checkbox is clicked", assert => {
-  let boxes = document.querySelectorAll("input[type=checkbox]");
-  let textItems = document.querySelectorAll("li label");
-  for (let i = 0; i < boxes.length; i++) {
-    if (i % 2 == 0) {
-      boxes[i].click();
-      assert.equal(textItems[i].classList.contains("todo__text--done"), true);
-    } else {
-      boxes[i].click();
-      boxes[i].click();
-      assert.equal(textItems[i].classList.contains("todo__text--done"), false);
-    }
-  }
+// test("BEM styling is reapplied to todo item text when checkbox is clicked", assert => {
+//   let boxes = document.querySelectorAll("input[type=checkbox]");
+//   let textItems = document.querySelectorAll("li label");
+//   for (let i = 0; i < boxes.length; i++) {
+//     if (i % 2 == 0) {
+//       boxes[i].click();
+//       assert.equal(textItems[i].classList.contains("todo__text--done"), true);
+//     } else {
+//       boxes[i].click();
+//       boxes[i].click();
+//       assert.equal(textItems[i].classList.contains("todo__text--done"), false);
+//     }
+//   }
 
-  uncheckChecked(boxes);
-});
+//   uncheckChecked(boxes);
+// });
+
 
 test("clicking a label ticks the corresponding checkbox", assert => {
   let labels = document.querySelectorAll(".todo > label");
