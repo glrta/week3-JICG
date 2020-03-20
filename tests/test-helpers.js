@@ -17,7 +17,7 @@ function test(name, testFunction) {
 
   const assertions = {
     equal,
-    notEqual,
+    notEqual
   };
 
   console.group(name);

@@ -3,10 +3,10 @@ const list = document.querySelector(".list");
 const listItems = list.getElementsByTagName("label");
 const addButton = document.querySelector(".add");
 const inputBox = document.querySelector("#todo-item");
-const filterButton = document.querySelector('#filter')
-const checkedItems = document.getElementsByClassName('todo__text--done')
-
+const startingPageElements = formList.childElementCount
 let addedTodos = 0;
+const checkedItems = document.getElementsByClassName('todo__text--done')
+const filterButton = document.querySelector('#filter')
 
 addButton.addEventListener("click", submitHandler);
 
@@ -27,7 +27,7 @@ function submitHandler(event) {
 
   if (userInput) {
     domFrag.querySelector(".todo__text").textContent = userInput;
-    if (formList.childElementCount === 3){
+    if (formList.childElementCount === startingPageElements + 1){
       formList.removeChild(formList.childNodes[formList.childNodes.length-1]);
     }
     todo.addEventListener("click", event => {
@@ -46,7 +46,7 @@ function submitHandler(event) {
     inputBox.value = "";
   } 
   
-  else if(formList.childElementCount == 2) {
+  else if(formList.childElementCount === startingPageElements) {
     err.appendChild(message);
     formList.appendChild(err);
   }
