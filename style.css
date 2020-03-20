@@ -108,6 +108,10 @@ form > button {
   text-align: center;
 }
 
+.hide {
+  display: none;
+}
+
 @media screen and (min-width: 480px) {
   body {
     position: absolute;
