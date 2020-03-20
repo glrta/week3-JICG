@@ -30,11 +30,6 @@ function submitHandler(event) {
     if (formList.childElementCount === startingPageElements + 1){
       formList.removeChild(formList.childNodes[formList.childNodes.length-1]);
     }
-    todo.addEventListener("click", event => {
-      if (event.target.tagName === "INPUT") {
-        todoLabel.classList.toggle("todo__text--done");
-      }
-    });
     domFrag.querySelector('.todo__text').textContent = userInput;
     todo.addEventListener('click', (event) => {
         if (event.target.tagName === "BUTTON") {

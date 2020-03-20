@@ -31,7 +31,7 @@ h1 {
   text-align: center;
 }
 
-.todo__text--done {
+input[type="submit"]:checked + label {
   text-decoration: line-through;
 }
 
