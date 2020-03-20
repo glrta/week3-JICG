@@ -67,7 +67,8 @@ test('pressing the delete button deletes the correct todo', t => {
 console.groupEnd("TEST: Can delete items")
     
 console.groupCollapsed("TEST: Can filter items")
-function countChecked(listItems){
+
+function countChecked(){
     let checkedItems = 0
 
     for(let i=0; listItems.length; i++){
@@ -78,14 +79,24 @@ function countChecked(listItems){
     }
 }
 
-countChecked(listItems)
+test('Counts how many checked items are in the list', t => {
+    inputBox.value = 'Walk dog';
+    addButton.click();
+    inputBox.value = 'Do laundry';
+    addButton.click();
+    inputBox.value = 'Buy vegetables'
+    addButton.click()
 
-// test('Counts how many checked items are in the list', t => {
+    let boxes = document.querySelectorAll('input[type="checkbox"]')
+    console.log(boxes)
 
-//     t.equal()
-//     }
+    for(let i=0; i < boxes.length; i++){
+        boxes[i].checked = true
+        boxes[i].classList.add('todo__text--done')
+    }
 
-// })
+
+})
 
 
 console.groupEnd("TEST: Can filter items")

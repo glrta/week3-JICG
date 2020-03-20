@@ -28,12 +28,12 @@
     </div>
     
     <div class='radio-buttons'>
-        <input type='radio' class='all' name='all' id='all'>
+        <input type='radio' class='all' name='filter' id='all' checked>
         <label for='all'>Show all</label>
         <input type='radio' class='all' name='filter' id='filter'>
         <label for='filter'>Show to-dos</label>
     </div>
-    
+
     <template id="todoTemplate">
       <li class="todo">
         <input class="todo__checkbox" type="checkbox" name="" id="" />
@@ -44,7 +44,7 @@
 
     <script src="script.js"></script>
     <script src="tests/test-helpers.js"></script>
-    <!-- <script src='tests/script-test.js'></script> -->
-    <!-- <script src="tests/completed-todos.js"></script> -->
+    <script src='tests/script-test.js'></script>
+    <script src="tests/completed-todos.js"></script>
   </body>
 </html>
