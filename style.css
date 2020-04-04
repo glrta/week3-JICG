@@ -13,8 +13,16 @@
 
 body {
   max-width: 30rem;
-  font-family: "Sen", sans-serif;
   margin: 0 auto;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+main {
+  place-self: center;
+  font-family: "Sen", sans-serif;
   background-color: var(--primaryColor);
   border-radius: 2%;
   padding: 1em;
@@ -110,13 +118,4 @@ form > button {
 
 .hide {
   display: none;
-}
-
-@media screen and (min-width: 480px) {
-  body {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
