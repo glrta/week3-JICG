@@ -7,6 +7,7 @@ const startingPageElements = formList.childElementCount
 let addedTodos = 0;
 const checkedItems = document.getElementsByClassName('todo__text--done')
 const filterButton = document.querySelector('#filter')
+const doneButton = document.querySelector('#all')
 
 addButton.addEventListener("click", submitHandler);
 
@@ -54,11 +55,18 @@ function submitHandler(event) {
 
 //we tried to add a filter but our brains stopped working
 
-if (filterButton.checked === true){
+filterButton.addEventListener("click", () =>{
   console.log(checkedItems)
   for (let i=0; i < checkedItems.length; i++){
-    checkedItems[i].classList.add('hide')
-  }  
-}
+    checkedItems[i].parentNode.classList.add('hide')
+  } 
+})
+
+doneButton.addEventListener("click", () =>{
+  console.log(checkedItems)
+  for (let i=0; i < checkedItems.length; i++){
+    checkedItems[i].parentNode.classList.remove('hide')
+  } 
+})
 
 
