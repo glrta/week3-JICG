@@ -53,17 +53,13 @@ function submitHandler(event) {
   }
 }
 
-//we tried to add a filter but our brains stopped working
-
 filterButton.addEventListener("click", () =>{
-  console.log(checkedItems)
   for (let i=0; i < checkedItems.length; i++){
     checkedItems[i].parentNode.classList.add('hide')
   } 
 })
 
 doneButton.addEventListener("click", () =>{
-  console.log(checkedItems)
   for (let i=0; i < checkedItems.length; i++){
     checkedItems[i].parentNode.classList.remove('hide')
   } 
