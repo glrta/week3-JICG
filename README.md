@@ -1,4 +1,4 @@
-# FAC19 week 1 project
+# FAC19 week 3 project
 
 At [Founders and Coders](https://www.foundersandcoders.com/about/) coding bootcamp we are tasked every week with a different project. A MVP is built in 1.5 days by 4 developers that follow the Agile methodology.
 
