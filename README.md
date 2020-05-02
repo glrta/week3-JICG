@@ -4,6 +4,10 @@ At [Founders and Coders](https://www.foundersandcoders.com/about/) coding bootca
 
 __Week 3 topics__: DOM manipulation and testing
 
+See [week 3 schedule](https://founders-and-coders.gitbook.io/coursebook/week-3/schedule).
+
+---
+
 # CIJG
 
 # What a to do
